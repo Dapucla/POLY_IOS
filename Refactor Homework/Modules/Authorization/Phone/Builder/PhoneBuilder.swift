@@ -20,8 +20,10 @@ final class PhoneBuilder {
         let phoneRouter = PhoneRouter()
         let phoneInteractor = PhoneInteractor(networkService: networkService, model: phoneEntity)
         let phonePresenter = PhonePresenter(router: phoneRouter, interactor: phoneInteractor)
-
-    
+        let phoneVC = PhoneEditViewController(presenter: phonePresenter)
+        phoneRouter.phoneVC = phoneVC
+        phonePresenter.phoneVC = phoneVC
+        
         return phoneVC
     }
 }
