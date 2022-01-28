@@ -17,7 +17,7 @@ class AgreementPresenter: AgreementProtocol {
     let networkService: NetworkServiceMock
     weak var agreementView: AgreementView?
     
-    init(networkService: NetworkServiceMock) {
+    required init(networkService: NetworkServiceMock) {
         self.networkService = networkService
     }
     
